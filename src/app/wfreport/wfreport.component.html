@@ -1,0 +1,54 @@
+<div class="fluid-container matcardML2pgt">
+  <h4><b><u>WorkFlow Reports</u></b></h4>
+
+  <div class="row" style="height:300px;">
+    <div class="col">
+      <canvas id="canvas" height="270" width="920" #canvas>{{chart}}</canvas>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <mat-table #table [dataSource]="wfreportDS">
+
+        <ng-container matColumnDef="COMPLETED_TIME">
+          <mat-header-cell *matHeaderCellDef> Completed Time </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.COMPLETED_TIME}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ACCEPT">
+          <mat-header-cell *matHeaderCellDef> Accept </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.ACCEPT}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="DEMOTE">
+          <mat-header-cell *matHeaderCellDef> Demote </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.DEMOTE}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="PROMOTE">
+          <mat-header-cell *matHeaderCellDef>Promote </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.PROMOTE}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="PULLBACK">
+          <mat-header-cell *matHeaderCellDef> Pull Back </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.PULLBACK}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="ERROR">
+          <mat-header-cell *matHeaderCellDef> Error</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.ERROR}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="TOTAL_REQUESTS">
+          <mat-header-cell *matHeaderCellDef> Total Request </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.TOTAL_REQUESTS}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator [length]="5" [pageSize]="3" [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+    </div>
+  </div>
+</div>

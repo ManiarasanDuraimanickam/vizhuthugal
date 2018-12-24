@@ -1,0 +1,66 @@
+<div class="fluid-container matcardML2pgt">
+  <h4>WorkFlow  Details</h4>
+  <div class="row">
+    <div class="form-group col">
+      <label for="STATE">STATE</label>
+      <input matInput id="STATE" placeholder="STATE" [(ngModel)]="STATE" (keyup)="applyFilter($event)" class="form-control bb1px">
+    </div>
+    <div class="form-group col">
+      <label for="STATUS">STATUS</label>
+      <input matInput id="STATUS" placeholder="STATUS" [(ngModel)]="STATUS" (keyup)="applyFilter($event)" class="form-control bb1px">
+    </div>
+    <div class="form-group col">
+      <label for="FORM">FORM</label>
+      <input matInput id="FORM" placeholder="FORM" [(ngModel)]="FORM" (keyup)="applyFilter($event)" class="form-control bb1px">
+    </div>
+    <div class="form-group col">
+      <label for="NEXTASSIGNEEROLE">NEXTASSIGNEEROLE</label>
+      <input matInput id="NEXTASSIGNEEROLE" placeholder="NEXTASSIGNEEROLE" [(ngModel)]="NEXTASSIGNEEROLE" (keyup)="applyFilter($event)" class="form-control bb1px">
+    </div>
+    <div class="form-group col">
+      <label for="OPERATIONNAME">OPERATION NAME</label>
+      <input matInput id="OPERATIONNAME" placeholder="OPERATION NAME" [(ngModel)]="OPERATIONNAME" (keyup)="applyFilter($event)" class="form-control bb1px">
+    </div>
+  </div>
+    <mat-table #table [dataSource]="wfabstractconfigDS">
+
+      <ng-container matColumnDef="FormName">
+        <mat-header-cell *matHeaderCellDef> Form Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.FormName}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="CURRENT_STATE">
+        <mat-header-cell *matHeaderCellDef> Current State </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.CURRENT_STATE}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="CURRENT_STATUS">
+        <mat-header-cell *matHeaderCellDef> Current Status </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.CURRENT_STATUS}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="TemplateID">
+        <mat-header-cell *matHeaderCellDef> Template ID </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.TemplateID}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="CURRENTROLENAME">
+        <mat-header-cell *matHeaderCellDef> Current Role Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.CURRENTROLENAME}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="WorkflowName">
+        <mat-header-cell *matHeaderCellDef> Workflow Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.WorkflowName}}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="WorkflowTypeName">
+        <mat-header-cell *matHeaderCellDef> Operation Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.WorkflowTypeName}}</mat-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+     <!-- <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple class="element-row"></mat-row>-->
+    </mat-table>
+    <mat-paginator [length]="5" [pageSize]="3" [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+</div>

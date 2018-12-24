@@ -1,0 +1,22 @@
+.matcardML2pgt{
+    margin-left: 0%;
+}
+.bb1px{
+    border-bottom: 1px solid rgb(50,109,230);
+}
+.mrt13pgt{
+    margin-top: 13%;
+}
+.table td {
+    text-align: center;   
+ }
+ .table th {
+    text-align: center;   
+ }
+
+ #abstractLogTbl,mat-row{
+    border-bottom-color: #000000 !important;
+  }
+  .previousrowBottonCLR{
+    border-bottom-color:rgba(0,0,0,.12)!important;
+  }
