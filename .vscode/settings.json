@@ -1,4 +1,7 @@
 {
     "http.proxySupport": "on",
-    "markdown.trace": "verbose"
+    "markdown.trace": "verbose",
+	"htmlhint.options": {
+    "doctype-first": false
+}
 }
