@@ -17,6 +17,7 @@ import { AppGlobals } from './core/global.var';
 import { DashboardComponent } from './dashboard/Dashboard.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { AppComponent } from './root/app.component';
+import { NewMemberComponent } from './newMember/NewMember.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AppComponent } from './root/app.component';
     LoginComponent,
     LogoutComponent,
     DashboardComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
+    NewMemberComponent
   ],
   imports: [
     BrowserModule,
