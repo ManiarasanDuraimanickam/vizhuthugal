@@ -1,23 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-body{
-    height: 100%;
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+  margin: 0 !important;
+  height: 100% !important;
 }
 
-body { 
-    font-family: Roboto-Medium,Roboto,"Helvetica Neue",Arial, sans-serif;
-    margin: 0;
-  }
-  
-  .basic-container {
-    padding: 30px;
-  }
-  
-  .version-info {
-    font-size: 8pt;
-    float: right;
-  }
-  .mat-drawer-side {
-    border-right: none !important;
+.basic-container {
+  padding: 30px !important;
 }
-  /* width */
+
+.version-info {
+  font-size: 8pt !important;
+  float: right !important;
+}
+
+.mat-drawer-side {
+  border-right: none !important;
+}
+
+/* width */
+.matcardML2pgt {
+  margin-left: 0% !important;
+}
+
+.bb1px {
+  border: 0px !important;
+  border-bottom: 1px solid rgb(50, 109, 230) !important;
+}
+
+.mrt13pgt {
+  margin-top: 13% !important;
+}
+
+.table td {
+  text-align: center !important;
+}
+
+.table th {
+  text-align: center !important;
+}
+
+#abstractLogTbl,
+mat-row {
+  border-bottom-color: #000000 !important;
+}
+
+.previousrowBottonCLR {
+  border-bottom-color: rgba(0, 0, 0, .12) !important;
+}

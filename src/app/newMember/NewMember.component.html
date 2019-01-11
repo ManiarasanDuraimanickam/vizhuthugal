@@ -1,98 +1,80 @@
 <div class="fluid-container matcardML2pgt">
   <h4>Add Member</h4>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="name">name</label>
-        <input matInput id="name" placeholder="name" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="fatherName">fatherName</label>
-        <input matInput id="fatherName" placeholder="fatherName" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="gender">gender</label>
-        <input matInput id="gender" placeholder="gender" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="isAcive">RFDS ID</label>
-        <input matInput id="isAcive" placeholder="isAcive" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="DOJ">RFDS ID</label>
-        <input matInput id="DOJ" placeholder="DOJ" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="username">RFDS ID</label>
-        <input matInput id="username" placeholder="username" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="password">RFDS ID</label>
-        <input matInput id="password" placeholder="password" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="contactNo">contactNo</label>
-        <input matInput id="contactNo" placeholder="contactNo" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="countryCode">countryCode</label>
-        <input matInput id="countryCode" placeholder="countryCode" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="memberID">contactNo</label>
-        <input matInput id="memberID" placeholder="memberID" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col">
-      <div class="form-group col">
-        <label for="role">contactNo</label>
-        <input matInput id="role" placeholder="role" class="form-control bb1px">
-      </div>
-    </div>
-  </div>
-  <div class=" col-2">
-    <div class="row">
-      <div class="col">
-        <button id="search" type="submit" class="btn btn-primary mrt13pgt">Add Member</button>
-      </div>
-    </div>
-  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-grid-list cols="3" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="full-width-input">
+          <input matInput id="name" placeholder="Member name" formControlName="name" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field>
+          <input matInput id="fatherName" placeholder="Father Name"  formControlName="fatherName" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <label for="gender" class="mat-form-field">Gender</label>
+        <mat-radio-group class="lftpad10" id="gender" formControlName="gender" required>
+          <mat-radio-button value="0" class="lftpad10">Male</mat-radio-button>
+          <mat-radio-button value="1" class="lftpad10">Female</mat-radio-button>
+        </mat-radio-group>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field>
+          <input matInput id="memberID" placeholder="Member ID"  formControlName="memberID" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field>
+          <input matInput id="password" type="password" placeholder="Default Password" 
+            formControlName="password" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <label for="isAcive">Is Active</label>
+        <mat-radio-group class="lftpad10" id="isAcive" formControlName="isActive" required>
+          <mat-radio-button value="true" class="lftpad10">Active</mat-radio-button>
+          <mat-radio-button value="false" class="lftpad10">In Active</mat-radio-button>
+        </mat-radio-group>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="lftpad10">
+          <input matInput [matDatepicker]="picker" placeholder="Date of Join" formControlName="doj" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field>
+          <input matInput id="contactNo" placeholder="Contact No"  formControlName="contactNo" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <label for="Login Rights">Need Login Rights</label>
+        <mat-radio-group class="lftpad10" id="isAcive" formControlName="hasLoginRights" required>
+          <mat-radio-button value="true" class="lftpad10">Yes</mat-radio-button>
+          <mat-radio-button value="false" class="lftpad10">No</mat-radio-button>
+        </mat-radio-group>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="lftpad10">
+          <label for="role">Member Role</label>
+          <mat-select formControlName="role" required>
+            <mat-option value="member">Member</mat-option>
+            <mat-option value="leader">Leader</mat-option>
+            <mat-option value="executiveDirector">Executive Director</mat-option>
+            <mat-option value="operationalDirector">Operational Director</mat-option>
+            <mat-option value="financialDirector">Financial Director</mat-option>
+          </mat-select>
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            Please provide the Member Role
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button id="addmember" type="submit" class="btn btn-primary mrt13pgt">Add Member <img src="../../assets/img/spinner_3.gif"
+            width="25px" height="25px" /></button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
 </div>

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 const COUCHDB_ROOT_URL = 'http://localhost:5984';
-const COUCHDB_NAME = 'vizhuthukal';
+const COUCHDB_MASTER_NAME = 'vizhuthukal-master';
 const COUCHDB_QUERY_SELECTOR = '_find';
 
 @Injectable({
@@ -29,7 +29,7 @@ export class CouchDB {
 class CouchDBUtil {
     constructor() { }
     getRestApiURL(selectorEndpoint: string): string {
-        return COUCHDB_ROOT_URL.concat('/').concat(COUCHDB_NAME).concat('/').concat(selectorEndpoint);
+        return COUCHDB_ROOT_URL.concat('/').concat(COUCHDB_MASTER_NAME).concat('/').concat(selectorEndpoint);
     }
     getHeaders(): HttpHeaders {
         return new HttpHeaders({

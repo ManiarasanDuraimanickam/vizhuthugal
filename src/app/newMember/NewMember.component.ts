@@ -15,14 +15,24 @@ export class NewMemberComponent implements OnInit {
             name: ['', Validators.required],
             fatherName: ['', Validators.required],
             gender: ['', Validators.required],
-            isAcive: ['', Validators.required],
-            DOJ: ['', Validators.required],
-            username: ['', Validators.required],
+            isActive: ['', Validators.required],
+            doj: ['', Validators.required],
+            memberID: ['', Validators.required],
             password: ['', Validators.required],
             contactNo: ['', Validators.required],
             countryCode: ['', Validators.required],
-            memberID: ['', Validators.required],
-            role: ['', Validators.required],
+            hasLoginRights: ['', Validators.required],
+            role: ['', Validators.required]
         });
+    }
+
+    onSubmit() {
+        if (!this.form.valid) {
+            return;
+        }
+    }
+
+    isFieldInvalid(field: String) {
+
     }
 }

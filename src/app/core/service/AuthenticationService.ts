@@ -11,32 +11,8 @@ export class AuthenticationService {
 
     constructor(private appConstant: AppGlobals, private appUtils: AppUtils, private couchDB: CouchDB) { }
 
-    validateUser(username: string, password: string): UserData {
-        const loginObject = this.couchDB._find(this.appUtils.getAuthenticationJsonTemplate(username, password));
-        let userData: UserData;
-        loginObject.then((resp: UserData) => {
-            userData = resp;
-            console.log(userData);
-        });
-        loginObject.catch((reason) => {
-            console.log('error at Login' + (<HttpErrorResponse> reason).error);
-        });
-        return userData;
+    validateUser(username: string, password: string): Promise<any> {
+        return this.couchDB._find(this.appUtils.getAuthenticationJsonTemplate(username, password));
     }
 }
 
-export interface UserData {
-    _id: string;
-    _rev: string;
-    name: string;
-    fatherName: string;
-    gender: string;
-    isAcive: boolean;
-    DOJ: string;
-    hasLoginRights: boolean;
-    username: string;
-    contactNo: number;
-    countryCode: string;
-    memberID: number;
-    role: string;
-}

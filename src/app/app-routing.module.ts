@@ -7,16 +7,17 @@ import { NewMemberComponent } from './newMember/NewMember.component';
 
 
 const routes: Routes = [
-  { path: '**', component: LoginComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
   { path: 'vizhuthukal', component: DashboardComponent },
   { path: 'subscription', component: SubscriptionComponent },
-  { path: 'addmember', component: NewMemberComponent }
+  { path: 'addmember', component: NewMemberComponent },
+  { path: '**', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

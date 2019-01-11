@@ -1,28 +1,28 @@
-<div *ngIf="!userLoggedIn"  [style.display]="loginShowHide" >
+<div *ngIf="!userLoggedIn" [style.display]="loginShowHide">
   <div class="signin-content" [style.display]="loginShowHide">
     <mat-card>
       <mat-card-content>
-        <form [formGroup]="form"
-         (ngSubmit)="onSubmit()">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <p>Please login to continue</p>
-          <mat-form-field class="full-width-input">
+          <mat-form-field class="full-width-input" [ngClass]="invalidUserpassword">
             <input matInput placeholder="User" formControlName="userName" required>
             <mat-error *ngIf="isFieldInvalid('userName')">
-              Please inform your user name
+              Please provide your username
             </mat-error>
           </mat-form-field>
-          <mat-form-field class="full-width-input">
+          <mat-form-field class="full-width-input" [ngClass]="invalidUserpassword">
             <input matInput type="password" placeholder="Password" formControlName="password" required>
             <mat-error *ngIf="isFieldInvalid('userName')">
-              Please inform your password
+              Please provide your password
             </mat-error>
           </mat-form-field>
-          <button mat-raised-button color="primary" type="submit">Login</button>
+          <button mat-raised-button color="primary" type="submit">Login <img *ngIf="loading" src="../../assets/img/spinner_3.gif" width="25px"
+              height="25px" /></button>
         </form>
       </mat-card-content>
     </mat-card>
   </div>
 </div>
 <div *ngIf="userLoggedIn" [style.display]="appShowHide">
-<app-sidenavigation>Loading</app-sidenavigation>
+  <app-sidenavigation [userData]="this.userData">Loading</app-sidenavigation>
 </div>

@@ -6,11 +6,32 @@ import { Injectable } from '@angular/core';
 export class AppUtils {
 
     getAuthenticationJsonTemplate(username: string, password: string) {
+        /* return {
+             'username': username,
+             'password': password,
+             'hasLoginRights': true,
+             'isAcive': true
+         };*/
         return {
-            'username': username,
-            'password': password,
-            'hasLoginRights': true,
-            'isAcive': true
+            'type': 'master',
+            'data': {
+                '$elemMatch': {
+                    '$and': [
+                        {
+                            'memberid': username
+                        },
+                        {
+                            'password': password
+                        },
+                        {
+                            'isActive': true,
+                        },
+                        {
+                            'hasLoginRights': true,
+                        }
+                    ]
+                }
+            }
         };
     }
 }
