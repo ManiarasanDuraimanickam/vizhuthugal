@@ -12,10 +12,46 @@
   text-shadow: 0 0 #3f51b5 !important;
 }
 
-.mat-radio-outer-circle {
+/*.mat-radio-outer-circle {
   border-color: #3f51b5 !important;
 }
 
-.mat-radio-inner-circle {
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #3f51b5 !important;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #3f51b5 !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
   background-color: #3f51b5 !important;
+}*/
+
+.txtclr_3f51b5 {
+  color: #3f51b5 !important;
+}
+
+md-radio-button.md-default-theme .md-off, 
+md-radio-button .md-off {
+  border-color: rgba(0,0,0,0.54);
+}
+
+md-radio-button.md-default-theme.md-checked .md-off, 
+md-radio-button.md-checked .md-off {
+  border-color: fade(#024f57, 85%);
+}
+
+md-radio-button.md-default-theme .md-on, 
+md-radio-button .md-on {
+  background-color: fade(#024f57, 80%);
+}
+
+md-radio-group.md-default-theme .md-checked .md-ink-ripple, 
+md-radio-group .md-checked .md-ink-ripple {
+  color: fade(#024f57, 85%);
+}
+
+md-radio-group.md-default-theme.md-focused:not(:empty) .md-checked .md-container:before, 
+md-radio-group.md-focused:not(:empty) .md-checked .md-container:before {
+  background-color: fade(#024f57, 26%);
 }

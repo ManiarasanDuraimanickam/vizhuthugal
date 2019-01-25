@@ -9,32 +9,32 @@
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field>
-          <input matInput id="fatherName" placeholder="Father Name"  formControlName="fatherName" required>
+          <input matInput id="fatherName" placeholder="Father Name" formControlName="fatherName" required>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <label for="gender" class="mat-form-field">Gender</label>
-        <mat-radio-group class="lftpad10" id="gender" formControlName="gender" required>
-          <mat-radio-button value="0" class="lftpad10">Male</mat-radio-button>
-          <mat-radio-button value="1" class="lftpad10">Female</mat-radio-button>
+        <label for="gender" class="txtclr_3f51b5">Gender<span class="mat-placeholder-required mat-form-field-required-marker ng-tns-c3-6 ng-star-inserted">*</span></label>
+        <mat-radio-group class="lftpad10 primary" id="gender" formControlName="gender" required>
+          <mat-radio-button value="0" class="lftpad10" color="primary">Male</mat-radio-button>
+          <mat-radio-button value="1" class="lftpad10" color="primary">Female</mat-radio-button>
         </mat-radio-group>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field>
-          <input matInput id="memberID" placeholder="Member ID"  formControlName="memberID" required>
+          <input matInput id="memberID" placeholder="Member ID" formControlName="memberID" required>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field>
-          <input matInput id="password" type="password" placeholder="Default Password" 
-            formControlName="password" required>
+          <input matInput id="password" type="password" placeholder="Default Password" formControlName="password"
+            required>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <label for="isAcive">Is Active</label>
+        <label for="isAcive" class="txtclr_3f51b5">Is Active <span class="mat-placeholder-required mat-form-field-required-marker ng-tns-c3-6 ng-star-inserted">*</span></label>
         <mat-radio-group class="lftpad10" id="isAcive" formControlName="isActive" required>
-          <mat-radio-button value="true" class="lftpad10">Active</mat-radio-button>
-          <mat-radio-button value="false" class="lftpad10">In Active</mat-radio-button>
+          <mat-radio-button value="true" class="lftpad10" color="primary">Active</mat-radio-button>
+          <mat-radio-button value="false" class="lftpad10" color="primary">In Active</mat-radio-button>
         </mat-radio-group>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -45,15 +45,24 @@
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-form-field>
-          <input matInput id="contactNo" placeholder="Contact No"  formControlName="contactNo" required>
-        </mat-form-field>
+        <mat-grid-list cols="2" rowHeight="100px">
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-form-field>
+              <input matInput id="countryCode" placeholder="countryCode" formControlName="countryCode" required size="10">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-form-field>
+              <input matInput id="contactNo" placeholder="Contact No" formControlName="contactNo" required>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <label for="Login Rights">Need Login Rights</label>
+        <label for="Login Rights" class="txtclr_3f51b5">Need Login Rights <span class="mat-placeholder-required mat-form-field-required-marker ng-tns-c3-6 ng-star-inserted">*</span></label>
         <mat-radio-group class="lftpad10" id="isAcive" formControlName="hasLoginRights" required>
-          <mat-radio-button value="true" class="lftpad10">Yes</mat-radio-button>
-          <mat-radio-button value="false" class="lftpad10">No</mat-radio-button>
+          <mat-radio-button value="true" class="lftpad10" color="primary">Yes</mat-radio-button>
+          <mat-radio-button value="false" class="lftpad10" color="primary">No</mat-radio-button>
         </mat-radio-group>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -72,7 +81,7 @@
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <button id="addmember" type="submit" class="btn btn-primary mrt13pgt">Add Member <img src="../../assets/img/spinner_3.gif"
+        <button id="addmember" type="submit" class="btn btn-primary mrt13pgt">Add Member <img *ngIf="loading" src="../../assets/img/spinner_3.gif"
             width="25px" height="25px" /></button>
       </mat-grid-tile>
     </mat-grid-list>

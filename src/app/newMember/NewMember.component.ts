@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class NewMemberComponent implements OnInit {
     form: FormGroup;
-
+    loading = false;
     public constructor(private fb: FormBuilder) { }
     ngOnInit() {
         this.form = this.fb.group({
@@ -27,9 +27,15 @@ export class NewMemberComponent implements OnInit {
     }
 
     onSubmit() {
+        console.log('clicked onSubmit');
+        this.loading = true;
         if (!this.form.valid) {
+            console.log('invalid form cannot be accept');
+            this.loading = false;
             return;
         }
+        console.log('Form accepted and in progress.');
+        this.loading = false;
     }
 
     isFieldInvalid(field: String) {
